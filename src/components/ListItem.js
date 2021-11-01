@@ -5,7 +5,7 @@ const ItemContainer = styled.div`
     border-radius:px;
     background-color: #fff;
     height: 120px;
-    width: 262px;
+    width: 292px;
     color: #29303b;
     margin-bottom: 10px;
     margin-right: 10px;
@@ -36,11 +36,11 @@ const ItemLink = styled.a`
 
 function ListItem (props) {
     return (
-        <ItemLink src="https://www.luiztools.com.br/livro-nodejs-amazon" title="Clique para comprar">
+        <ItemLink href={props.url} title="Clique para comprar">
             <ItemContainer>
-                <Thumbnail src="https://m.media-amazon.com/images/I/4110e7iseFL.jpg" />
-                <TitlePanel>Programação Web com NodeJS</TitlePanel>
-                <PricePanel>R$ 4.99</PricePanel>
+                <Thumbnail src={props.image} />
+                <TitlePanel>{props.title}</TitlePanel>
+                <PricePanel>R$ {props.price}</PricePanel>
             </ItemContainer>
         </ItemLink>
     );
